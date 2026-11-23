@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17294b">
+<title>پاسخ تمرین هوش مصنوعی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400..700&amp;display=swap">
+<style>
+:root{color-scheme:light;--ink:#17294b;--muted:#486075;--accent:#08786f;--line:#dbe7e9;--paper:#fff;--bg:#f3f8f8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.95 Vazirmatn,Tahoma,Arial,sans-serif}
+.wrap,main{width:min(900px,calc(100% - 2rem));margin-inline:auto}
+header{padding:3rem 0 2.5rem;color:white;background:linear-gradient(120deg,#17294b,#195361)}
+header h1{margin:0 0 1rem;font-size:clamp(1.7rem,5vw,3rem);line-height:1.5}
+nav{display:flex;flex-wrap:wrap;gap:.5rem}
+nav a{color:white;border:1px solid #a0d2ce;border-radius:2rem;padding:.22rem .8rem;text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--ink);background:#c9f0eb}
+main{padding:1.5rem 0 2rem}
+section{background:var(--paper);border:1px solid var(--line);border-radius:1rem;padding:clamp(1rem,4vw,2rem);margin-bottom:1rem;scroll-margin-top:1rem}
+.label{color:var(--accent);font-size:.9rem;font-weight:bold}
+h2{font-size:clamp(1.2rem,3vw,1.6rem);margin:.2rem 0 .9rem;line-height:1.6}
+p{margin:.7rem 0}
+ol{padding-inline-start:1.6rem}
+li+li{margin-top:.5rem}
+code,.formula{direction:ltr;unicode-bidi:isolate;display:inline-block;background:#eaf4f3;color:#164e4c;padding:0 .3rem;border-radius:.3rem;font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{text-align:right;border:1px solid var(--line);padding:.45rem .65rem;vertical-align:top}
+th{background:#eaf4f3}
+.back{display:inline-block;margin-top:.6rem;color:var(--accent);font-size:.85rem}
+:focus-visible{outline:3px solid #25b5a4;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body id="top">
+<header><div class="wrap"><h1>پاسخ تمرین هوش مصنوعی</h1><nav aria-label="فهرست سؤال‌ها"><a href="#q1">سؤال ۱</a><a href="#q2">سؤال ۲</a><a href="#q3">سؤال ۳</a><a href="#q4">سؤال ۴</a><a href="#q5">سؤال ۵</a></nav></div></header>
+<main><section id="q1" aria-labelledby="title1"><div class="label">سؤال ۱</div><h2 id="title1">فرق تابع معمولی با مدل یادگیری ماشین</h2><p>برای محاسبهٔ کارمزد، بانک از قبل می‌داند چه قانونی باید اجرا شود. مثلاً
+اگر کارمزد یک‌هزارم مبلغ انتقال باشد، برای انتقال سه میلیون تومان، تابع
+سه هزار تومان برمی‌گرداند. نرخ کارمزد را بانک تعیین کرده و برنامه فقط آن
+را در فرمول می‌گذارد.</p>
+<p>در تشخیص تراکنش مشکوک، خود مبلغ همیشه کافی نیست. مثلاً انتقال ۲۰
+میلیون تومان ممکن است برای یک مشتری عادی باشد، ولی اگر از یک گوشی جدید،
+بعد از چند تلاش ناموفق برای ورود و به یک حساب ناشناس انجام شود، احتمال
+مشکوک بودنش بیشتر می‌شود. اگر بانک نمونه‌های کافی از تراکنش‌های سالم و
+متقلبانه داشته باشد، مدل می‌تواند از آن‌ها یاد بگیرد که هر نشانه چقدر
+اهمیت دارد.</p>
+<p>وقتی مدل با نمونه‌های قبلی پارامترهایش را تنظیم می‌کند، در مرحلهٔ
+<strong>آموزش (Training)</strong> است. وقتی با همان پارامترها به یک
+تراکنش جدید امتیاز ریسک می‌دهد، در مرحلهٔ <strong>استنتاج
+(Inference)</strong> است.</p>
+<a class="back" href="#top">بازگشت به فهرست ↑</a></section>
+<section id="q2" aria-labelledby="title2"><div class="label">سؤال ۲</div><h2 id="title2">مدل چطور از اشتباهش یاد می‌گیرد؟</h2><p>ورودی ۱۰، وزن فعلی ۲ و جواب واقعی ۳۰ است.</p>
+<ol type="1">
+<li><p>در <strong>Forward Pass</strong> مدل جوابش را حساب می‌کند.
+<bdi class="formula" dir="ltr">2 × 10=20</bdi></p></li>
+<li><p>با <strong>Loss</strong> اندازهٔ اشتباه را حساب می‌کنیم.
+<bdi class="formula" dir="ltr">(20−30)²=100</bdi></p></li>
+<li><p>با <strong>Backpropagation</strong> از زیان به وزن برمی‌گردیم تا
+ببینیم تغییر وزن چه اثری روی زیان دارد. حاصل این حساب همان
+<strong>Gradient</strong> است.</p>
+<p><bdi class="formula" dir="ltr">2(20−30) × 10=−200</bdi></p>
+<p>علامت منفی یعنی اگر وزن را کمی زیاد کنیم، زیان کمتر می‌شود.</p></li>
+<li><p><strong>Optimizer</strong> با استفاده از گرادیان وزن را تغییر
+می‌دهد. مثلاً اگر نرخ یادگیری را
+<bdi class="formula" dir="ltr">0.001</bdi> بگیریم، وزن جدید
+<bdi class="formula" dir="ltr">2−0.001(−200)=2.2</bdi> می‌شود.</p></li>
+<li><p>با وزن جدید، پیش‌بینی ۲۲ است و زیان به
+<bdi class="formula" dir="ltr">(22−30)²=64</bdi> می‌رسد.</p></li>
+</ol>
+<p>حتی اگر وزن را به ۳ برسانیم و خطای همین نمونه صفر شود، هنوز نمی‌دانیم
+مدل روی نمونهٔ تازه چطور کار می‌کند. مثلاً اگر ورودی تازه ۲۰ و جواب واقعی
+۵۰ باشد، مدل با وزن ۳ جواب ۶۰ می‌دهد. برای همین باید مدل را روی داده‌هایی
+امتحان کنیم که موقع آموزش ندیده است.</p>
+<a class="back" href="#top">بازگشت به فهرست ↑</a></section>
+<section id="q3" aria-labelledby="title3"><div class="label">سؤال ۳</div><h2 id="title3">مدل زبانی چطور درخواست ساخت API را می‌فهمد؟</h2><p>وقتی می‌نویسیم «یک API برای ثبت پست در ASP.NET Core طراحی کن»، اول متن
+به تکه‌های کوچک تقسیم می‌شود. به این کار <strong>Tokenization</strong>
+می‌گویند. هر تکه یک شماره به اسم <strong>Token ID</strong> دارد. مدل هر
+شماره را به یک بردار، یعنی مجموعه‌ای از عددها، تبدیل می‌کند تا بتواند آن
+را پردازش کند. به این بردار <strong>Embedding</strong> می‌گویند.</p>
+<p>مدل کلمهٔ «پست» را کنار بقیهٔ درخواست می‌بیند. وجود <code>API</code> و
+<code>ASP.NET Core</code> کمک می‌کند آن را به معنی یک مطلب در برنامه
+بگیرد. این اطلاعات بخشی از <strong>Context</strong> یا زمینهٔ درخواست‌اند.
+بعد مدل احتمال توکن بعدی را حساب می‌کند، یک توکن به جواب اضافه می‌شود و
+این کار ادامه پیدا می‌کند تا پاسخ کامل شود.</p>
+<p>مثلاً مدل ممکن است مسیر <code>POST /api/posts</code> را پیشنهاد بدهد،
+درحالی‌که همهٔ مسیرهای پروژهٔ ما با <code>/api/v1</code> شروع می‌شوند. مدل
+از خودِ درخواست نمی‌تواند این قرارداد را بفهمد. اگر عامل یک endpoint مشابه
+از مخزن بخواند و در اختیار مدل بگذارد، مدل می‌تواند از الگوی همان پروژه
+استفاده کند.</p>
+<a class="back" href="#top">بازگشت به فهرست ↑</a></section>
+<section id="q4" aria-labelledby="title4"><div class="label">سؤال ۴</div><h2 id="title4">چرا عامل متدی پیشنهاد داده که وجود ندارد؟</h2><p>اول باید ببینیم پروژه واقعاً از چه نسخه‌ای از کتابخانه استفاده می‌کند.
+شاید عامل نمونه‌ای از نسخهٔ جدیدتر دیده باشد، متد را با متد یک پکیج دیگر
+اشتباه گرفته باشد یا اسم آن را از روی اسم متدهای مشابه حدس زده باشد.
+گاهی هم متد وجود دارد ولی در فضای نام دیگری تعریف شده و پروژه به آن
+دسترسی ندارد.</p>
+<p>با <strong>Prompt Engineering</strong> دستور را مشخص می‌کنیم. مثلاً
+می‌گوییم «قبل از استفاده از این متد، بررسی کن در نسخهٔ نصب‌شده وجود دارد.»
+با <strong>Context Engineering</strong> اطلاعات لازم برای این بررسی را
+می‌دهیم، مثل فایل پروژه، نسخهٔ دقیق پکیج و متن کامل خطای Build. بعد اسم و
+ورودی‌های متد را در مستندات رسمی همان نسخه بررسی می‌کنیم. در مرحلهٔ
+<strong>Validation</strong> روی خود پروژه Build می‌گیریم تا ببینیم
+کامپایلر فراخوانی را قبول می‌کند یا نه. اگر رفتار متد هم مهم باشد، آن را
+با تست بررسی می‌کنیم.</p>
+<p>«لطفاً دقیق‌تر باش» به‌تنهایی کافی نیست، چون به عامل نمی‌گوید باید کدام
+نسخه را بررسی کند یا از کجا بفهمد پیشنهادش درست است.</p>
+<a class="back" href="#top">بازگشت به فهرست ↑</a></section>
+<section id="q5" aria-labelledby="title5"><div class="label">سؤال ۵</div><h2 id="title5">چطور همهٔ تست‌ها سبزند ولی قانون انتشار رعایت نشده؟</h2><p>در <code>BlogSpecLab</code> ممکن است عامل فقط امتحان کرده باشد که
+«پست تأییدشده منتشر می‌شود». برنامه‌ای که هر پستی را منتشر کند هم همین تست
+را پاس می‌کند. برای پیدا کردن باگ باید حالت ممنوع را هم امتحان کنیم، یعنی
+نویسنده بخواهد پست تأییدنشدهٔ خودش را منتشر کند.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">مرحله</th>
+<th style="text-align: right;">کاری که در این مثال انجام می‌دهیم</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong>Specify</strong></td>
+<td style="text-align: right;">می‌نویسیم که انتشار پست بدون تأیید
+ویراستار باید رد شود و وضعیت پست تغییر نکند.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>Clarify</strong></td>
+<td style="text-align: right;">روشن می‌کنیم بعد از تأیید ویراستار چه کسی
+اجازهٔ انتشار دارد.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>Plan</strong></td>
+<td style="text-align: right;">تصمیم می‌گیریم تأیید ویراستار سمت سرور
+بررسی شود تا حتی درخواست مستقیم به API هم از این شرط عبور کند.</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong>Tasks</strong></td>
+<td style="text-align: right;">کار را به اضافه کردن شرط انتشار و نوشتن
+تست برای حالت مجاز و ممنوع تقسیم می‌کنیم.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>Implement</strong></td>
+<td style="text-align: right;">شرط را در کد می‌گذاریم و با حساب نویسنده
+مستقیماً API را صدا می‌زنیم. بررسی می‌کنیم درخواست رد شود و پست در پایگاه
+داده همچنان منتشر نشده باشد.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>سبز بودن تست‌ها یعنی برنامه در حالت‌هایی که امتحان کرده‌ایم طبق
+انتظار عمل کرده است.</strong> در این سؤال، اگر تست انتشار بدون تأیید را
+ننوشته باشیم، سبز بودن تست‌ها چیزی دربارهٔ رعایت آن قانون به ما
+نمی‌گوید.</p>
+<a class="back" href="#top">بازگشت به فهرست ↑</a></section></main>
+</body>
+</html>
